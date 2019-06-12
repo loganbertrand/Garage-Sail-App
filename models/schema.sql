@@ -1,4 +1,2 @@
-DROP DATABASE IF EXISTS garageSale_db;
-CREATE DATABASE garageSale_db;
-
-
+DROP DATABASE IF EXISTS garagesail_db;
+CREATE DATABASE garagesail_db;
