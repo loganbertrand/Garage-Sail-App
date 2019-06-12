@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "garageSale_db",
+    "database": "garagesail_db",
     "host": "localhost",
     "port":8889,
     "dialect": "mysql"
