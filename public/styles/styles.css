@@ -9,29 +9,17 @@ body {
   -moz-animation: AnimationName 30s ease infinite;
   animation: AnimationName 30s ease infinite;
 
-<<<<<<< HEAD
-@-webkit-keyframes AnimationName {
-=======
   @-webkit-keyframes AnimationName {
->>>>>>> master
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
-<<<<<<< HEAD
-@-moz-keyframes AnimationName {
-=======
   @-moz-keyframes AnimationName {
->>>>>>> master
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
 }
-<<<<<<< HEAD
-@keyframes AnimationName { 
-=======
   @keyframes AnimationName { 
->>>>>>> master
     0%{background-position:0% 50%}
     50%{background-position:100% 50%}
     100%{background-position:0% 50%}
@@ -43,8 +31,6 @@ body {
   background: transparent;
 }
 
-<<<<<<< HEAD
-=======
 .btn-primary {
   background-color: white;
   color: black;
@@ -52,4 +38,3 @@ body {
   padding-right:40px;
   border-radius: 19px;
 }
->>>>>>> master
