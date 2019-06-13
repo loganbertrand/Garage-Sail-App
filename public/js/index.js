@@ -61,9 +61,8 @@ var refreshExamples = function() {
     });
 
     $testList.empty();
-    $testList.append(data);
+    $testList.append($Sales);
 
-    $("#testList").append($Sales)
   });
 };
 

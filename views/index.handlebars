@@ -42,6 +42,10 @@
       </div>
       <ul id="testList" class="list-group">
         {{#each garageSales}}
+        <li data-id="{{this.id}}" class="list-group-item">
+            <a href="example/{{this.id}}">{{this.address}}</a>
+            <button class="btn btn-danger float-right delete">ｘ</button>
+          </li>
         {{/each}}
       </ul>
     </div>
