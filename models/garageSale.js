@@ -1,9 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
-  var GarageSale = sequelize.define("GarageSail", {
+  var GarageSale = sequelize.define("GarageSale", {
     name: DataTypes.STRING,
     address: DataTypes.STRING,
     time: DataTypes.STRING,
-    categories: DataTypes.TEXT,
+    //categories: DataTypes.TEXT,
     image: DataTypes.STRING
 
   });
