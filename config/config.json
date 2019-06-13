@@ -2,9 +2,9 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "exampledb",
+    "database": "garagesail_db",
     "host": "localhost",
-    "port": "8889",
+    "port":8889,
     "dialect": "mysql"
   },
   "test": {
