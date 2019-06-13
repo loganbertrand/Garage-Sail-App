@@ -1,8 +1,10 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $name = $("#formName");
+var $address= $("#formAddress");
 var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $time = $("#formTime");
+var $categories = $("#formCategories");
+var $image = $("#formImage");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -64,17 +66,20 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
 
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+  var formData = {
+    name: $name.val().trim(),
+    address: $address.val().trim(),
+    time: $time.val().trim(),
+    categories: $categories.val().trim(),
+    image: $image.val().trim(),
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  if (!(formData.name && formData.address && formData.time && formData.categories && formData.image)) {
+    alert("You must enter information for all parts of the form!");
     return;
   }
 
-  API.saveExample(example).then(function() {
+  API.saveExample(formData).then(function() {
     refreshExamples();
   });
 

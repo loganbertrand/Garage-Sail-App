@@ -2,23 +2,23 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+  app.get("/api/garagesale", function(req, res) {
+    db.GarageSale.findAll({}).then(function(dbGarageSales) {
+      res.json(dbGarageSales);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  // Create a new GarageSale
+  app.post("/api/garagesale", function(req, res) {
+    db.GarageSale.create(req.body).then(function(dbGarageSale) {
+      res.json(dbGarageSale);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+  // Delete an GarageSale by id
+  app.delete("/api/garagesale/:id", function(req, res) {
+    db.GarageSale.destroy({ where: { id: req.params.id } }).then(function(dbGarageSale) {
+      res.json(dbGarageSale);
     });
   });
 };
