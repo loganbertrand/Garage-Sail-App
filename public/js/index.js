@@ -6,7 +6,8 @@ var $time = $("#formTime");
 var $categories = $("#formCategories");
 var $image = $("#formImage");
 
-var testList = $("#testList")
+var testList = $("#testList");
+var deleteButton = $("#delete-button")
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -108,4 +109,5 @@ var handleDeleteBtnClick = function() {
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
+deleteButton.on("click", handleDeleteBtnClick);
 //$exampleList.on("click", ".delete", handleDeleteBtnClick);
