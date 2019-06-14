@@ -93,6 +93,9 @@ var handleFormSubmit = function(event) {
 
   //$exampleText.val("");
   //$exampleDescription.val("");
+
+  //clear form
+  $('.form-group input').val('');
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
