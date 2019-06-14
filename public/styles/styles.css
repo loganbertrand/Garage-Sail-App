@@ -2,6 +2,8 @@
   line-height: 2.5;
 }
 
+.card-body img {width:100%;}
+
 body {
   background: linear-gradient(298deg, #05ddfa, #0869e2);
   background-size: 1000% 1000%;
