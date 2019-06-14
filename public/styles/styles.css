@@ -106,3 +106,9 @@ p{
   font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
+.form-check {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  width: 100%;
+}
