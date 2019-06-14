@@ -16,17 +16,14 @@ module.exports = function(app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
+  app.get("/garagesale/:id", function(req, res) {
     db.GarageSale.findOne({ where: { id: req.params.id } }).then(function(dbGarageSale) {
-      res.render("example", {
-        garageSales: dbGarageSale
+      res.render("garagesale", {
+        garageSale: dbGarageSale
       });
     });
   });
 
-  app.get("/post", function(req, res) {
-    res.render("post");
-  });
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
