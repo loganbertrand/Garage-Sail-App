@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
     name: DataTypes.STRING,
     address: DataTypes.STRING,
     time: DataTypes.STRING,
-    //categories: DataTypes.TEXT,
+    categories: DataTypes.TEXT,
     image: DataTypes.STRING
   });
   return GarageSale;

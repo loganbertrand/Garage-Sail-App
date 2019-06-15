@@ -3,8 +3,6 @@ var $name = $('#formName');
 var $address = $('#formAddress');
 var $submitBtn = $('#submit');
 var $time = $('#formTime');
-// eslint-disable-next-line no-unused-vars
-var $categories = $('#formCategories');
 var $image = $('#formImage');
 
 var $testList = $('#testList');
@@ -71,11 +69,17 @@ var refreshExamples = function() {
 var handleFormSubmit = function(event) {
   event.preventDefault();
   console.log('Submit button was clicked');
+  var allVals = [];
+
+  $('#category-input :checked').each(function() {
+    allVals.push($(this).val());
+  });
+
   var formData = {
     name: $name.val().trim(),
     address: $address.val().trim(),
     time: $time.val().trim(),
-    //categories: $categories.val().trim(),
+    categories: allVals.join(', '),
     image: $image.val().trim()
   };
   console.log(formData);
