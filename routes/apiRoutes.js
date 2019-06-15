@@ -13,6 +13,7 @@ module.exports = function(app) {
     console.log(req.body)
     db.GarageSale.create(req.body).then(function(dbGarageSale) {
       res.json(dbGarageSale);
+      consolelog(dbGarageSale);
     });
   });
 
