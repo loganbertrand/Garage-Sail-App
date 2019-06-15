@@ -1,16 +1,16 @@
-var db = require("../models");
+var db = require('../models');
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/api/garagesale", function(req, res) {
+  app.get('/api/garagesale', function(req, res) {
     db.GarageSale.findAll({}).then(function(dbGarageSales) {
       res.json(dbGarageSales);
     });
   });
 
   // Create a new GarageSale
-  app.post("/api/garagesale", function(req, res) {
-    console.log(req.body)
+  app.post('/api/garagesale', function(req, res) {
+    console.log(req.body);;
     db.GarageSale.create(req.body).then(function(dbGarageSale) {
       res.json(dbGarageSale);
       consolelog(dbGarageSale);
@@ -18,9 +18,17 @@ module.exports = function(app) {
   });
 
   // Delete an GarageSale by id
-  app.delete("/api/garagesale/:id", function(req, res) {
-    db.GarageSale.destroy({ where: { id: req.params.id } }).then(function(dbGarageSale) {
-      res.json(dbGarageSale);
+  app.delete('/api/garagesale/:id', function(req, res) {
+    db.GarageSale.destroy({ where: { id: req.params.id } }).then(function(
+      dbGarageSale,
+      error
+    ) {
+      if (error) {
+        return res.json(error);
+      }
+      res.json({
+        deleted: true
+      });
     });
   });
 };
