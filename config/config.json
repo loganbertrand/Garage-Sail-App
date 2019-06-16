@@ -4,12 +4,12 @@
     "password": "root",
     "database": "garagesail_db",
     "host": "localhost",
-    "port":8889,
+    "port": 3309,
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "root",
+    "password": "",
     "database": "testdb",
     "host": "localhost",
     "dialect": "mysql",

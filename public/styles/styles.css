@@ -1,6 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .list-group-item {
   line-height: 2.5;
 }
+
+.card-body img {width:100%;}
 
 body {
   background: linear-gradient(298deg, #05ddfa, #0869e2);
@@ -71,12 +77,32 @@ body {
   outline: none;
 }
 
+.btn-secondary {
+  width: 140px;
+  height: 45px;
+  font-family: 'Hind', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: white;
+  background: linear-gradient(298deg, #05ddfa, #0869e2);
+  background-size: 1000% 1000%;
+  -webkit-animation: Gradient 10s ease infinite;
+  -moz-animation: Gradient 10s ease infinite;
+  animation: Gradient 10s ease infinite;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
 .btn-primary:hover {
   background-color: white;
   box-shadow: 0px 15px 20px rgba(67, 68, 68, 0.4);
   color: black;
   transform: translateY(-7px);
-  
 }
 .navbar-brand {
   font-size: 25px !important;
@@ -103,4 +129,69 @@ p{
   font-size: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif
 }
+
+.form-check {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  width: 100%;
+}
+
+.circle {
+  width: 90px;
+  height: 90px;
+  line-height: 115px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 auto 40px;
+}
+
+.image-cover {
+  width: 100px;
+  height: 150px;
+  border-radius: 100%;
+  
+
+  object-fit: cover;
+  object-position: center right;
+}
+
+.circle:hover {
+  box-shadow: 0px 15px 20px rgba(67, 68, 68, 0.4);
+  transform: translateY(-5px);
+}
+
+h3 {
+  font-weight: 400;
+  letter-spacing: 3px;
+  
+}
+
+.card {
+  box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  border: none;
+  background: white;
+}
+
+.gradientBtn {
+  -webkit-animation: Gradient 25s ease infinite;
+  animation: Gradient 25s ease infinite;
+  background: linear-gradient(298deg, #05ddfa, #0869e2);
+  background-size: 800% 800%
+}
+
+.gradientBtn:hover {
+  
+  box-shadow: 0px 15px 20px rgba(67, 68, 68, 0.4);
+  
+  
+}
+
 

@@ -1,63 +1,66 @@
 // Get references to page elements
-var $name = $("#formName");
-var $address= $("#formAddress");
-var $submitBtn = $("#submit");
-var $time = $("#formTime");
-var $categories = $("#formCategories");
-var $image = $("#formImage");
+var $name = $('#formName');
+var $address = $('#formAddress');
+var $submitBtn = $('#submit');
+var $time = $('#formTime');
+var $image = $('#formImage');
+
+var $testList = $('#testList');
+var deleteButton = $('#delete-button');
 
 // The API object contains methods for each kind of request we'll make
 var API = {
-  saveExample: function(example) {
+  saveGarageSale: function(garagesale) {
+    console.log('attempting to post data');
     return $.ajax({
       headers: {
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json'
       },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
+      type: 'POST',
+      url: 'api/garagesale/',
+      data: JSON.stringify(garagesale)
     });
   },
-  getExamples: function() {
+  getGarageSales: function() {
     return $.ajax({
-      url: "api/examples",
-      type: "GET"
+      url: 'api/garagesale/',
+      type: 'GET'
     });
   },
-  deleteExample: function(id) {
+  deleteGarageSale: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
+      url: 'api/garagesale/' + id,
+      type: 'DELETE'
     });
   }
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+  API.getGarageSales().then(function(data) {
+    var $Sales = data.map(function(garagesale) {
+      var $a = $('<a>')
+        .text(garagesale.text)
+        .attr('href', '/garagesale/' + garagesale.id);
 
-      var $li = $("<li>")
+      var $li = $('<li>')
         .attr({
-          class: "list-group-item",
-          "data-id": example.id
+          class: 'list-group-item',
+          'data-id': garagesale.id
         })
         .append($a);
 
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
+      var $button = $('<button>')
+        .addClass('btn btn-danger float-right delete')
+        .text('ｘ');
 
       $li.append($button);
 
       return $li;
     });
 
-    $exampleList.empty();
-    $exampleList.append($examples);
+    $testList.empty();
+    $testList.append($Sales);
   });
 };
 
@@ -65,26 +68,43 @@ var refreshExamples = function() {
 // Save the new example to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
+  console.log('Submit button was clicked');
+  var allVals = [];
+
+  $('#category-input :checked').each(function() {
+    allVals.push($(this).val());
+  });
 
   var formData = {
     name: $name.val().trim(),
     address: $address.val().trim(),
     time: $time.val().trim(),
-    categories: $categories.val().trim(),
-    image: $image.val().trim(),
+    categories: allVals.join(', '),
+    image: $image.val().trim()
   };
-
-  if (!(formData.name && formData.address && formData.time && formData.categories && formData.image)) {
-    alert("You must enter information for all parts of the form!");
+  console.log(formData);
+  if (
+    !(
+      formData.name &&
+      formData.address &&
+      formData.time && //&& formData.categories
+      formData.image
+    )
+  ) {
+    alert('You must enter information for all parts of the form!');
     return;
   }
 
-  API.saveExample(formData).then(function() {
+  API.saveGarageSale(formData).then(function() {
+    console.log('posted successfully? Time to Get');
     refreshExamples();
   });
 
-  $exampleText.val("");
-  $exampleDescription.val("");
+  //$exampleText.val("");
+  //$exampleDescription.val("");
+
+  //clear form
+  $('.form-group input').val('');
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
@@ -92,13 +112,19 @@ var handleFormSubmit = function(event) {
 var handleDeleteBtnClick = function() {
   var idToDelete = $(this)
     .parent()
-    .attr("data-id");
+    .attr('data-id');
 
-  API.deleteExample(idToDelete).then(function() {
+  API.deleteGarageSale(idToDelete).then(function() {
     refreshExamples();
   });
+
+  //remove posted item
+  $(event.target)
+    .closest('.list-group-item')
+    .remove();
 };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$submitBtn.on('click', handleFormSubmit);
+$('.list-group').on('click', deleteButton, handleDeleteBtnClick);
+//$exampleList.on("click", ".delete", handleDeleteBtnClick);
