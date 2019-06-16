@@ -1,59 +1,82 @@
 <div class="jumbotron jumbotron-fluid text-white">
   <div class="container text-center">
-    <h2 class="display-4 pt-5 pb-3">
+    <h2 class="display-4 pt-5 pb-3 animated fadeInLeftBig">
       Find and post garage sales easier than ever <strong>before.</strong>
     </h2>
-    <button class="btn btn-primary">See All</button> <a href="/post"><button class="btn btn-primary">Post</button></a>
+    <a href="#1"><button class="btn btn-primary">See All</button></a> <a href="/post"><button class="btn btn-primary">Post</button></a>
   </div>
   <div class="container text-center pt-5">
-    <i class="fas fa-angle-double-down fa-3x"></i>
+    <i class="fas fa-angle-double-down fa-3x animated swing delay-1s"></i>
   </div>
-  
+
 </div>
-<section style="background: white; height: 500px;">
+<section style="background: #EBF8FD;">
+  <h3 class="text-center pt-3">Categories</h3>
   <div class="container">
-    <div class="row">
-      <div class="col-12 text-center pt-3">
-        <h1>Featured Garage Sales</h1>
-       <div class="card-group">
- <div class="card">
-   <div class="card-body">
-     <h5 class="card-title">Auto</h5>
-     <img src="img/auto.jpeg"/>
-     <p class="card-text"></p>
-     <p class="card-text"><small class="text-muted"></small></p>
-   </div>
- </div>
- <div class="card">
-    
-   <div class="card-body">
-     <h5 class="card-title">Appliances</h5>
-     <img src="img/appliances.jpg"/>
-     <p class="card-text"></p>
-     <p class="card-text"><small class="text-muted"></small></p>
-   </div>
- </div>
- <div class="card">
-   <div class="card-body">
-     <h5 class="card-title">Home</h5>
-     <img src="img/home.jpg "/>
-     <p class="card-text"></p>
-     <p class="card-text"><small class="text-muted"></small></p>
-   </div>
- </div>
-</div>
+    <div class="row pt-3">
+      <div class="col-2">
+        <a href="">
+          <div class="circle" style="background: orange;"><i class="fas fa-3x fa-home"></i></div>
+        </a>
+
       </div>
-      <ul id="testList" class="list-group">
-        {{#each garageSales}}
-        <li data-id="{{this.id}}" class="list-group-item">
-            <img src="{{this.image}}">
-            <a href="garagesale/{{this.id}}">{{this.address}}</a>
-            <button id="delete-button" class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-        {{/each}}
-      </ul>
+      <div class="col-2">
+        <a href="">
+          <div class="circle" style="background: #20C3F3;"><i class="fas fa-3x fa-mobile-alt"></i></div>
+        </a>
+      </div>
+      <div class="col-2">
+        <a href="">
+          <div class="circle" style="background: #A175D9;"><i class="fas fa-3x fa-football-ball"></i></div>
+        </a>
+      </div>
+      <div class="col-2">
+        <a href="">
+          <div class="circle" style="background: #A3CE71;"><i class="fas fa-3x fa-seedling"></i></div>
+        </a>
+      </div>
+      <div class="col-2">
+        <a href="">
+          <div class="circle" style="background: #FF3F55;"><i class="fas fa-3x fa-tshirt"></i></div>
+        </a>
+      </div>
+      <div class="col-2">
+        <a href="">
+          <div class="circle" style="background: #E1C340;"><i class="fas fa-3x fa-hand-point-right"></i></div>
+        </a>
+      </div>
     </div>
   </div>
+
+  <div class="container" id="1">
+    <div class="row">
+      <div class="col-12 text-center pt-3">
+        <h3>All Garage Sales</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      {{#each garageSales}}
+      <div class="col-3">
+        <div class="card text-center">
+         
+          <div class="card-body d-flex flex-column">
+            <img src="{{this.image}}" class="image-cover">
+            <h3 class="pt-2">{{this.name}}</h3>
+            <h5 class="card-title">{{this.address}}</h5>
+            <p class="card-text">{{this.categories}}</p>
+            <p>{{this.time}}</p>
+            <a href="#" class="btn gradientBtn transition-3d-hover text-white mt-auto">Delete</a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+  </div>
+
+
+
 </section>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
