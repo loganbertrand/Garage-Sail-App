@@ -112,7 +112,7 @@ var handleDeleteBtnClick = function() {
   console.log('deleting ....***********');
 
   var idToDelete = $(event.target)
-    .closest('.list-group-item')
+    .closest('.garage-sale-item')
     .attr('data-id');
 
   API.deleteGarageSale(idToDelete).then(function() {
@@ -120,7 +120,7 @@ var handleDeleteBtnClick = function() {
   });
 
   $(event.target)
-    .closest('.list-group-item')
+    .closest('.garage-sale-item')
     .remove();
 };
 
@@ -137,6 +137,6 @@ var handleDeleteBtnClick = function() {
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on('click', handleFormSubmit);
-$('.list-group').on('click', '.delete', handleDeleteBtnClick);
+$('.garage-group').on('click', '.delete', handleDeleteBtnClick);
 //Edit button attempt
 //$('.list-group').on('click', '.edit', handleEditBtnClick);
