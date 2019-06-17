@@ -1,13 +1,10 @@
 html {
   scroll-behavior: smooth;
 }
-
 .list-group-item {
   line-height: 2.5;
 }
-
 .card-body img {width:100%;}
-
 body {
   background: linear-gradient(298deg, #05ddfa, #0869e2);
   background-size: 1000% 1000%;
@@ -17,48 +14,43 @@ body {
   animation: Gradient 10s ease infinite;
   font-family: 'Hind', sans-serif;
 }
-
 @-webkit-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
-
 @-moz-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
-
 @keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+    0% {
+        background-position: 0% 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0% 50%
+    }
 }
-
 .jumbotron {
   height: 500px;
   background: transparent;
 }
-
 .btn-primary {
   width: 140px;
   height: 45px;
@@ -76,7 +68,6 @@ body {
   cursor: pointer;
   outline: none;
 }
-
 .btn-secondary {
   width: 140px;
   height: 45px;
@@ -97,7 +88,6 @@ body {
   cursor: pointer;
   outline: none;
 }
-
 .btn-primary:hover {
   background-color: white;
   box-shadow: 0px 15px 20px rgba(67, 68, 68, 0.4);
@@ -111,7 +101,6 @@ body {
 strong {
   font-weight: 600;
 }
-
 .card{
 background-color: gainsboro;
 color: black;
@@ -119,24 +108,20 @@ margin-top: 40px;
 width: 100%;
 border: 1px solid blue;
 }
-
 h5 {
   font-size: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif
 }
-
 p{
   font-size: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif
 }
-
 .form-check {
   display: flex;
   justify-content: space-around;
   position: relative;
   width: 100%;
 }
-
 .circle {
   width: 90px;
   height: 90px;
@@ -151,83 +136,45 @@ p{
   font-weight: 700;
   margin: 0 auto 40px;
 }
-
 .image-cover {
   width: 100px;
   height: 150px;
   border-radius: 100%;
   
-
   object-fit: cover;
   object-position: center right;
 }
-
 .circle:hover {
   box-shadow: 0px 15px 20px rgba(67, 68, 68, 0.4);
   transform: translateY(-5px);
 }
-
 h3 {
   font-weight: 400;
   letter-spacing: 3px;
-  font-family: sans-serif;
-  
 }
-
 .card {
   box-shadow: 7px 7px 30px -5px rgba(0,0,0,0.1);
   border-radius: 10px;
   border: none;
   background: white;
 }
-
 .gradientBtn {
   -webkit-animation: Gradient 25s ease infinite;
   animation: Gradient 25s ease infinite;
   background: linear-gradient(298deg, #05ddfa, #0869e2);
   background-size: 800% 800%
 }
-
 .gradientBtn:hover {
   
   box-shadow: 0px 15px 20px rgba(67, 68, 68, 0.4);
 }
-
 #gridCheck1{
   padding: 50px 0;
   max-height:62%;
   max-width:62%;
 }
-
 .form-group{
-font-family: sans-serif;
-font-size: 20px;
-color: saddlebrown;
-text-align: left;
-
-}
-
-p{
-  font-family: sans-serif;
-  font-size: 20px;
-  color: saddlebrown;
-
-}
-
-.form-check-label{
-  font-family: sans-serif;
   font-size: 20px;
   color: black;
- 
-}
-
-h1{
-  font-family: sans-serif;
-  font-style: unset;
-  color: black;
-}
-
-#submit{
-  font-family: sans-serif;
-  background-color: #0869e2;
+  text-align: left;
 }
