@@ -24,4 +24,15 @@ module.exports = function(app) {
       res.json(dbGarageSale);
     });
   });
+
+  //Update a Garage Sale
+  app.put('/api/garagesale/:id', function(req, res) {
+    db.GarageSale.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbGarageSale) {
+      res.json(dbGarageSale);
+    });
+  });
 };

@@ -124,7 +124,19 @@ var handleDeleteBtnClick = function() {
     .remove();
 };
 
+//Edit Button to change things about your garage sale
+// var handleEditBtnClick = function() {
+//   console.log('Time to Edit ....***********');
+
+//   var idToEdit = $(event.target)
+//     .closest('.list-group-item')
+//     .attr('data-id');
+
+//   window.location.href = '/post/' + idToEdit.id;
+// };
+
 // Add event listeners to the submit and delete buttons
 $submitBtn.on('click', handleFormSubmit);
 $('.list-group').on('click', '.delete', handleDeleteBtnClick);
-//$exampleList.on("click", ".delete", handleDeleteBtnClick);
+//Edit button attempt
+//$('.list-group').on('click', '.edit', handleEditBtnClick);
