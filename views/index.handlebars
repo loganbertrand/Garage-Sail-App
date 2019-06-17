@@ -55,18 +55,15 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row list-group">
       {{#each garageSales}}
-      <div class="col-3">
+      <div data-id="{{this.id}}" class="list-group-item col-3">
         <div class="card text-center">
-         
           <div class="card-body d-flex flex-column">
             <img src="{{this.image}}" class="image-cover">
-            <h3 class="pt-2">{{this.name}}</h3>
-            <h5 class="card-title">{{this.address}}</h5>
-            <p class="card-text">{{this.categories}}</p>
+            <a href="garagesale/{{this.id}}">{{this.address}}</a>
             <p>{{this.time}}</p>
-            <a href="#" class="btn gradientBtn transition-3d-hover text-white mt-auto">Delete</a>
+            <a class="btn gradientBtn transition-3d-hover text-white mt-auto delete">Delete</a>
           </div>
         </div>
       </div>
