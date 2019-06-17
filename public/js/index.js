@@ -6,7 +6,6 @@ var $time = $('#formTime');
 var $image = $('#formImage');
 
 var $testList = $('#testList');
-var deleteButton = $('#delete-button');
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -110,21 +109,34 @@ var handleFormSubmit = function(event) {
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
 var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
+  console.log('deleting ....***********');
+
+  var idToDelete = $(event.target)
+    .closest('.garage-sale-item')
     .attr('data-id');
 
   API.deleteGarageSale(idToDelete).then(function() {
     refreshExamples();
   });
 
-  //remove posted item
   $(event.target)
-    .closest('.list-group-item')
+    .closest('.garage-sale-item')
     .remove();
 };
 
+//Edit Button to change things about your garage sale
+// var handleEditBtnClick = function() {
+//   console.log('Time to Edit ....***********');
+
+//   var idToEdit = $(event.target)
+//     .closest('.list-group-item')
+//     .attr('data-id');
+
+//   window.location.href = '/post/' + idToEdit.id;
+// };
+
 // Add event listeners to the submit and delete buttons
 $submitBtn.on('click', handleFormSubmit);
-$('.list-group').on('click', deleteButton, handleDeleteBtnClick);
-//$exampleList.on("click", ".delete", handleDeleteBtnClick);
+$('.garage-group').on('click', '.delete', handleDeleteBtnClick);
+//Edit button attempt
+//$('.list-group').on('click', '.edit', handleEditBtnClick);
