@@ -10,7 +10,7 @@ module.exports = function(app) {
 
   // Create a new GarageSale
   app.post('/api/garagesale', function(req, res) {
-    console.log(req.body);;
+    console.log(req.body);
     db.GarageSale.create(req.body).then(function(dbGarageSale) {
       res.json(dbGarageSale);
       consolelog(dbGarageSale);
